@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/myrecipes.css' %}">
+{% endblock %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<!-- Error/success messages here -->
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == "success" %}<small style="color: green">{{ message }}</small> {% endif %}
+{% if message.tags == "error" %}
+<script> alert("{{ message }}") </script> {% endif %}
+{% endfor %}
+{% endif %}
+
+{% block page_content %}
+<!-- Refering from: https://bootsnipp.com/snippets/819o -->
+<div class="container">
+  <ul class="list-group">
+    <div class="jumbotron">
+      <h2><strong> My Recipes</strong></h2>
+      <p> Here you can see the posts you created!</p>
+    </div>
+    {% for post in allposts %}
+    <li class="list-group-item">
+      <div class="row">
+        {% if post.post_img %}
+        <div class="media col-md-4">
+          <figure>
+            <img class="media-object img-rounded img-responsive" src="{{post.post_img}}">
+            <span class="post-date">{{post.timestamp}}</span>
+          </figure>
+        </div>
+        {% else %}
+        <div class="media col-md-4">
+          <figure>
+            <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250">
+            <span class="post-date">{{post.timestamp}}</span>
+          </figure>
+        </div>
+        {% endif %}
+        <div class="col-md-6">
+          <h4 class="list-group-item-heading"><strong> {{ post.title }}</strong></h4>
+          <p class="list-group-item-text"> {{post.short_content}}</p>
+        </div>
+        <div class="col-md-2">
+          <div class="btn-group-vertical">
+            <a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary">View More</a>
+            <form class="btn btn-primary" method="POST" action="{% url 'delete' pk=post.pk %}">
+              {% csrf_token %}
+              <input type="submit" value="Delete" />
+            </form>
+            <form class="btn btn-primary" method="POST" action="{% url 'edit' pk=post.pk %}">
+              {% csrf_token %}
+              <input type="submit" value="Edit Post" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+

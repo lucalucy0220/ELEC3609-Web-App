@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!--Refering from: https://simpleisbetterthancomplex.com/2015/12/04/package-of-the-week-django-widget-tweaks.html-->
+{% load widget_tweaks %}
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/postrecipes.css' %}">
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+  <div class="jumbotron">
+    <h2> <strong>Post a new recipe</strong> </h2>
+    <p> Have something you want to share with others? <br>
+      You've come to the right place! </p>
+  </div>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+        {% for hidden in form.hidden_fields %}
+          {{ hidden }}
+        {% endfor %}
+  
+        {% for field in form.visible_fields %}
+          <div class="form-group">
+              <div class="form-row">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field|add_class:'form-control' }}
+                {% for error in field.errors %}
+                  <span class="help-block">{{ error }}</span>
+                {% endfor %}
+              </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="form-group" id="post-buttons">
+      <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-ok"></span> Post
+      </button>
+      <a href="{% url 'postrecipes' %}" class="btn btn-default">Cancel</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block head_javascript %}
+<script src="{% static '/js/postrecipes.js' %}"></script>
+{% endblock %}

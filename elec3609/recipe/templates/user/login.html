@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
+{% endblock %}
+
+{% block page_content %}
+<div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+            <div class="card card1">
+                <div class="row justify-content-center my-auto">
+                    <div class="col-md-8 col-10 my-5">
+                        <h4 class="mb-5 text-center heading">We are Second Breakfast!</h4>
+                        <h6 class="msg-info">Please login to your account</h6>
+
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            {% if messages %}
+                            {% for error in messages %}
+                            <br>
+                            <small style="color: red">{{ error }}</small>
+                            {% endfor %}
+                            {% endif %}
+                            <div class="row justify-content-center my-3 px-3">
+                                <button id="loginBtn" class="btn-block btn-color" type="submit">Login to SB</button>
+                            </div>
+                        </form>
+                        <div class="row justify-content-center my-2"> <a href="{% url 'password_reset' %}"><small
+                                    class="text-muted">Forgot
+                                    Password?</small></a> </div>
+                    </div>
+                </div>
+                <div class="bottomText text-center mb-5">
+                    <p class="sm-text mx-auto mb-3">Don't have an account?<a id="signupBtn" href="{% url 'signup' %}"
+                            class="btn btn-white ml-2">Sign Up Now</a></p>
+                </div>
+            </div>
+            <div class="card card2">
+                <div class="my-auto mx-md-5 px-md-5 right">
+                    <h3 class="text-white">We are more than just a recipe website.</h3> <small class="text-white">Our
+                        solution is to create a community post-driven website where people can submit and post their own
+                        recipes, almost like a ‘specialised Pinterest’ in terms of purpose. But why should people use
+                        our site? Our aim is to foster an increased sense of community, which we feel is incredibly
+                        important especially during this pandemic, while people are isolated and in need of human
+                        connection.
+                        We believe we can do this by having a website dedicated to a common interest, as well as
+                        encouraging users to post their ideas and interact with other users via commenting, following or
+                        sending DMs. All of these features mentioned will hopefully will help us achieve our goal.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block head_javascript %}
+<script src="{% static '/js/favorite.js' %}"></script>
+{% endblock %}

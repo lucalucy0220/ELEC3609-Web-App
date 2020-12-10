@@ -1,0 +1,141 @@
+.row{
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  .list-group-item{
+    border: 1px solid  rgba(8, 105, 196, 0.671);
+    border-radius: 0!important;
+    transition: box-shadow 0.5s;
+    background-color: rgb(173, 202, 230);
+    opacity: 0.9;
+  }
+
+  .list-group-item:hover{
+    box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.671);
+  }
+
+  body{
+    background: url("/static/assets/post_recipe_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+  }
+
+  /* changing appearance of the default submit buttons */
+  .button-submit {
+    background: none!important;
+    border: none!important;
+    padding: 0;
+    color: white;
+  }
+  
+  figure{
+    object-position: center;
+  }
+  
+  img.media-object{
+    position: center;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 350px;
+    height: Auto;
+  }
+  
+  .list-group-head{
+    color: #fff!important;
+    background-color: lightskyblue!important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  
+  h2 {
+    font-size: 24px;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  p{
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  .col-md-6.h4 {
+    font-size: 25px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  } 
+  
+  .well{
+    background-color: lightskyblue;
+  }
+  
+  .jumbotron{
+    color: #fff!important;
+    background-color: lightskyblue!important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  span.post-date {
+    position: absolute;
+    background: #337ab7;
+    top: 35px;
+    left: 5px;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    padding: 5px 15px;
+    font-weight: 700;
+  }
+  
+  .container-fluid{
+    text-align: left;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-size: 20px;
+    border: 1px solid  rgba(8, 105, 196, 0.671);
+    border-radius: 0!important;
+    transition: box-shadow 0.5s;
+  }
+  
+  .container-fluid:hover{
+    box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.671);
+  }
+  
+  
+  .bg-1{
+    background-color:  rgb(49, 150, 212);
+    color:#ffffff;
+  }
+  
+  .bg-2{
+    background-color: #474e5d;
+    color:#ffffff;
+  }
+
+
+  

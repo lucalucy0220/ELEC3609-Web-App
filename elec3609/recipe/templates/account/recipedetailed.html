@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_css %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/detailedrecipe.css' %}">
+{% endblock %}
+
+{% block page_content %}
+<div class="container-fluid bg-1">
+    <h2 class="bg-1-content">{{ post.title }}</h2>
+    <p class="bg-1-content"> Author: {{ post.user}} </p>
+    {% if post.post_img %}
+        <img class="media-object img-rounded img-responsive center bg-1-content" id="recipe-img" src="{{post.post_img}}">
+    {% else %}
+        <img class="media-object img-rounded img-responsive bg-1-content" id="recipe-img" src="http://placehold.it/350x250">
+    {% endif %}
+    <p class="bg-1-content">{{post.timestamp}}</p>
+    <div class="btn-group-vertical">
+        {% if user.is_authenticated %}
+        <form class="btn btn-default" method="POST" action="{% url 'favorite' post.pk %}">
+          {% csrf_token %}
+          <input class="bg-1-content" type="submit" id="fav-btn" value="Add to Favorites" />
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="container-fluid bg-2">
+    <p>{{ post.content|linebreaksbr }}</p>
+    <p class="bg-1-content" id="category-tag">Category: {{post.category}}</p>
+</div>
+
+{% endblock %}
+
+{% block head_javascript %}
+<script src="{% static '/js/favorite.js' %}"></script>
+{% endblock %}

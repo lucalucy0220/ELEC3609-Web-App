@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/category.css' %}">
+{% endblock %}
+
+{% block head_javascript %}
+<script src="{% static '/js/category.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block page_content %}
+<div class="container-fluid">
+    <div class="col-xs-12">
+		<div class="page-header text-center">
+			<h2><strong>Category</strong></h2>
+			<p>Select a category and see what recipes you discover!</p>
+		</div>
+
+		<div class="carousel slide" id="myCarousel" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row"><!--Row1-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.theepochtimes.com/assets/uploads/2019/08/06/steak-on-grill-700x420.jpg" alt="AussieBBQ"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>AussieBBQ</h4>
+									<a class="btn btn-mini" href="{% url 'AussieBBQ' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.pinimg.com/736x/16/64/69/16646995d1bcd1265f4b763141b95a99.jpg" alt="Chinese"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Chinese</h4>
+									<a class="btn btn-mini" href="{% url 'Chinese' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.grouponcdn.com/deal/3Wjyj4cpxzysFtB3f9i8sbCywLks/3W-1000x600/v1/c700x420.jpg" alt="Greek"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Greek</h4>
+									<a class="btn btn-mini" href="{% url 'Greek' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.grouponcdn.com/deal/3pei2AP55QZiRyKgMn8sTVbNFZNt/3p-700x420/v1/c700x420.jpg" alt="Chinese"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Indian</h4>
+									<a class="btn btn-mini" href="{% url 'Indian' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row"><!--Row2-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://pic.japanholiday.com/sushi-FD-2.jpg" alt="Japanese"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Japanese</h4>
+									<a class="btn btn-mini" href="{% url 'Japanese' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.grouponcdn.com/deal/kBgAzQDCckThFuVYgQWU/X1-2048x1229/v1/c700x420.jpg" alt="Lebanese"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Lebanese</h4>
+									<a class="btn btn-mini" href="{% url 'Lebanese' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://cdn-images-1.medium.com/max/1200/1*uKQQ_aA2-FMKJcUJ1THGOw.jpeg" alt="Mexican"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Mexican</h4>
+									<a class="btn btn-mini" href="{% url 'Mexican' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.grouponcdn.com/deal/3nhPcqumJrDCzPZWtGUVbYDyDQh7/3n-2048x1229/v1/c700x420.jpg" alt="Thai"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Thai</h4>
+									<a class="btn btn-mini" href="{% url 'Thai' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--Page1-->
+				<div class="carousel-item"><!--Page2-->
+					<div class="row"><!--Row1-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.pinimg.com/originals/e2/f0/ca/e2f0ca79f329e56daf0ae3d52441e3ff.png" alt="Baking"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Baked Sweets</h4>
+									<a class="btn btn-mini" href="{% url 'BakedSweets' %}" >» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.theepochtimes.com/assets/uploads/2019/04/01/bribery-cake-e1554135987411-700x420.jpg" alt="Dessert"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Dessert</h4>
+									<a class="btn btn-mini" href="{% url 'Dessert' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/9634b0509d2725d654004e000034fa283758bae5/0_2244_3988_2391/master/3988.jpg?width=700&quality=85&auto=format&fit=max&s=57979909c337f4c386d391afe461d4bb" alt="Pies"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Pies</h4>
+									<a class="btn btn-mini" href="{% url 'Pies' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/af1bbd9a843fc1ad6d0a422ea7a8ee5fde032c44/2154_916_4171_2502/master/4171.jpg?width=700&quality=85&auto=format&fit=max&s=d6875d0b58ef71b8b5dc609070ed38eb" alt="Pastries"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Pastries</h4>
+									<a class="btn btn-mini" href="{% url 'Pastries' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row"><!--Row2-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://s3-ap-southeast-1.amazonaws.com/images.marketing-interactive.com/wp-content/uploads/2018/07/Snacks-123rf-700x420.jpg" alt="Snacks"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Snacks</h4>
+									<a class="btn btn-mini" href="{% url 'Snacks' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/a80bdfd52ed67ec62fdd96ffd818e9f8fcaacbfc/1_0_2559_1536/master/2559.jpg?width=700&quality=85&auto=format&fit=max&s=4e1dba7d908c20d4318114b1c2eecdfd" alt="FriedFood"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>FriedFood</h4>
+									<a class="btn btn-mini" href="{% url 'FriedFood' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://img.grouponcdn.com/deal/3r5Q41ZbWCa1pa7BvqHA2H118pzn/3r-750x450/v1/c700x420.jpg" alt="Pizza"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Pizza</h4>
+									<a class="btn btn-mini" href="{% url 'Pizza' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://www.biggerbolderbaking.com/wp-content/uploads/2020/04/Hearty-Yeast-Free-Bread-WS-Thumbnail.jpg" alt="Bread"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Bread</h4>
+									<a class="btn btn-mini" href="{% url 'Bread' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--Page2-->
+				<div class="carousel-item"><!--Page3-->
+					<div class="row"><!--Row1-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.pinimg.com/originals/12/45/91/1245910d55005b3184239036043b8648.jpg" alt="SandWhich"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>SandWhich</h4>
+									<a class="btn btn-mini" href="{% url 'SandWich' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/bb8e7422c682d47d9927000589cffb8ce12cf373/0_0_5180_3108/master/5180.jpg?width=700&quality=85&auto=format&fit=max&s=fdc61eb94235617265493e26e6a02e22" alt="Salad"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Salad</h4>
+									<a class="btn btn-mini" href="{% url 'Salad' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/2713c6600e91f5abad877e4512e41e506b2e4bb8/171_0_4689_2813/master/4689.jpg?width=700&quality=85&auto=format&fit=max&s=fd5d040bbc1aa692a2f6f4f620d6f3ec" alt="Vegetarian"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Vegetarian</h4>
+									<a class="btn btn-mini" href="{% url 'Vegetarian' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/449ed846bbfd4293833fb1a55f001b3823fbd22c/0_128_2500_1499/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=a9f4893d6c0164d85d949e92cc8eb2e5" alt="Burgers"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Burgers</h4>
+									<a class="btn btn-mini" href="{% url 'Burgers' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row"><!--Row2-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/1579468e4a8a5c15eb8e01c7390564c2437737a2/0_1374_5484_3290/master/5484.jpg?width=700&quality=85&auto=format&fit=max&s=069397e1e91371cf617cfd3242590206" alt="Rice"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Rice</h4>
+									<a class="btn btn-mini" href="{% url 'Rice' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/4e72d5147f6c5ef5426241772d5beb013f9c7a4c/0_2240_3840_2304/master/3840.jpg?width=700&quality=85&auto=format&fit=max&s=4273fb407054da5f08a4f474e7c2ed28" alt="Pasta"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Pasta</h4>
+									<a class="btn btn-mini" href="{% url 'Pasta' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/d932bde606a59660ff3bbab562b98c061c2045ef/0_866_3542_2126/master/3542.jpg?width=700&quality=85&auto=format&fit=max&s=1c64fd845438c100b6f6af04eec2f1dc" alt="Seafood"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Seafood</h4>
+									<a class="btn btn-mini" href="{% url 'Seafood' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://www.bosshunting.com.au/wp-content/uploads/2020/03/c700x420.jpg" alt="Steak"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Steak</h4>
+									<a class="btn btn-mini" href="{% url 'Steak' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--Page3-->
+				<div class="carousel-item"><!--Page4-->
+					<div class="row"><!--Row1-->
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/50bc86ae6edd1545169b4be63ef018f8aba0dd36/0_289_5000_3000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=16f61f54cf651868da2f0f4703ca36fb" alt="Breakfast"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Breakfast</h4>
+									<a class="btn btn-mini" href="{% url 'Breakfast' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://i.guim.co.uk/img/media/b70d027be5bd9c275f3e0cbb0a247cdce9e3e8ee/0_0_5472_3283/master/5472.jpg?width=700&quality=85&auto=format&fit=max&s=064b9e507208b9cccd22bb960a8ab599" alt="Drinks"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Drinks</h4>
+									<a class="btn btn-mini" href="{% url 'Drinks' %}">» View</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="fff">
+								<div class="thumbnail">
+									<img src="https://www.inspiredtaste.net/wp-content/uploads/2018/10/Homemade-Vegetable-Soup-Recipe-2-1200.jpg" alt="Soup"
+									width="240" height="160">
+								</div>
+								<div class="caption">
+									<h4>Soup</h4>
+									<a class="btn btn-mini" href="{% url 'Soup' %}">» View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--Page4-->
+			</div>
+		</div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

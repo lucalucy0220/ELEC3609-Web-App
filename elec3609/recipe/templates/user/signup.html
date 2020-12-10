@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/signup.css' %}">
+{% endblock %}
+
+{% block page_content %}
+
+<!-- Errors -->
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags == "error" %} <script> alert("{{ message }}") </script> {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-4 register-left">
+            <img src="{% static '/assets/signup-recipeIcon.svg' %}" style="color: white;" alt="" />
+            <h3>Welcome</h3>
+            <p>You are 30 seconds away from entering the best recipe sharing community.</p>
+            <a href="{% url 'login' %}" type="submit" name="">Login</a><br>
+        </div>
+        <div class="col-md-8 register-right">
+            <h3 class="register-heading">Join us now!
+            </h3>
+            <div class="row register-form">
+                <div class="col-md-12 mx-auto">
+                    <form class="form-group" id="user_form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in user_form %}
+                        <p>
+                            <label class="field-label{% if field.field.required %} field-required{% endif %}"
+                                for="{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            {% if field.errors %}
+                            {% for error in field.errors %}
+                            <br>
+                            <small style="color: red">{{ error }}</small>
+                            {% endfor %}
+                            {% endif %}
+                        </p>
+                        {% endfor %}
+                        <div class="d-flex" style="justify-content: center;">
+                            <input id="signupBtn" type="submit" name="submit" value="Sign Up" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block head_javascript %}
+<script src="{% static '/js/favorite.js' %}"></script>
+{% endblock %}

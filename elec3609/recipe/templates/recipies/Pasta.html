@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/myrecipes.css' %}">
+{% endblock %}
+
+{% block page_content %}
+<!----Refering from: https://bootsnipp.com/snippets/819o-->
+  <div class="container">
+    <ul class="list-group">
+      <div class="jumbotron">
+        <h2><strong>Pasta</strong></h2>
+      </div>
+      {% for post in allposts %}
+      <li class="list-group-item">
+        <div  class="row">
+          {% if post.post_img %}
+          <div class="media col-md-4">
+            <figure>
+              <img class="media-object img-rounded img-responsive" src="{{post.post_img}}">
+              <span class="post-date">{{post.timestamp}}</span>
+            </figure>
+          </div>
+          {% else %}
+          <div class="media col-md-4">
+            <figure>
+              <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250">
+              <span class="post-date">{{post.timestamp}}</span>
+            </figure>
+          </div>
+          {% endif %}
+          <div class="col-md-6">
+            <h4 class="list-group-item-heading"><strong> {{ post.title }}</strong></h4>
+            <p class="list-group-item-text"><strong>Author: {{post.user}}</strong> </p>
+            <p class="list-group-item-text"> {{post.short_content}}</p>
+          </div>
+          <div class="col-md-2">
+            <div class="btn-group-vertical">
+              <a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary">View More</a>
+              <!-- only show favourite button to logged in users -->
+              {% if user.is_authenticated %}
+                <form class="btn btn-primary fav-btn" method = "POST" action="{% url 'favorite' pk=post.pk %}">
+                  {% csrf_token %}
+                  <input class="button-submit" type="submit" value="Favorite" />
+                </form>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+{% block head_javascript %}
+<script src="{% static '/js/category.js' %}"></script>
+{% endblock %}

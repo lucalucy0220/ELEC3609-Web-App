@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/random.css' %}">
+{% endblock %}
+
+{% block page_content %}
+<section id="about">
+    <div class="container">
+        <div id="shuffle" class="button_cont" align="center">
+            <a class="shuffle-link"><span>Shuffle</a>
+        </div>
+        <div id="meal" class="row meal"></div>
+        <div hidden id="spinner"></div>
+    </div>
+</section>
+{% endblock %}
+{% block head_javascript %}
+<script src="{% static '/js/random.js' %}"></script>
+{% endblock %}

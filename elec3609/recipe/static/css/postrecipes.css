@@ -1,0 +1,77 @@
+body{
+  background: url("/static/assets/post_recipe_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
+}
+
+h2 {
+  font-size: 24px;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 19px;
+  line-height: 1.375em;
+  color: #303030;
+  font-weight: 400;
+  margin-bottom: 30px;
+<<<<<<< HEAD
+}
+=======
+} 
+
+>>>>>>> d45493c5dd04b00edb10f4e921b10ee271bcaa85
+.form-group{
+  background-color: cadetblue;
+  background-attachment: fixed;
+  opacity: 1;
+}
+
+.form-row {
+  background-color: cadetblue;
+  background-attachment: fixed;
+  opacity: 0.9;
+  font-size: 19px;
+  line-height: 1.375em;
+  color: #303030;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.jumbotron{
+  color: #fff!important;
+  background-color: lightskyblue!important;
+  padding: 25px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.form-row{
+  background-color: cadetblue;
+  background-attachment: fixed;
+  opacity: 0.9;
+  font-size: 19px;
+  line-height: 1.375em;
+  color: #303030;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.form-group{
+  background-color: cadetblue;
+  background-attachment: scroll;
+  opacity: 0.9;
+}
+
+#post-buttons {
+  width:90%;
+  margin: auto;
+}

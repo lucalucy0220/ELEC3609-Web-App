@@ -1,0 +1,241 @@
+/* BACKGROUND IMAGE OF SEARCH PAGE*/
+body {
+    background: url('https://cdn1.thesculptedvegan.com/wp-content/uploads/2018/06/06131233/nutrition-section-4-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+  }
+  *
+  {
+      outline: none;
+  }
+  
+  html, body
+  {
+      height: 100%;
+      min-height: 100%;
+  }
+  
+  body
+  {
+      margin: 0;
+      background-color: #F0FFF0;
+  }
+  
+  .tb
+  {
+      display: table;
+      width: 100%;
+  }
+  
+  .td
+  {
+      display: table-cell;
+      vertical-align: middle;
+  }
+
+  /*START OF SEARCH BAR STYLING*/
+  /*REFERENCE - SEARCH BAR : https://bootsnipp.com/snippets/GaeQR*/
+
+   /*SIX THINGS CHANGED = COLOUR , POSITIONING ON THE PAGE,
+   SHAPE , BACKGROUND COLOUR , WIDTH , LENGTH*/
+
+
+  
+  input, button
+  {
+      color: #000000;
+      font-family: Nunito;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background-color: transparent;
+  }
+  
+  #cover
+  {
+      top: 30%;
+      left: 0;
+      right: 0;
+      width: 1200px;
+      padding: 35px;
+      margin: -100x auto 0 auto;
+      background-color: #20B2AA;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px #000000, 0 0 0 20px #000000;
+      transform: scale(0.6);
+      margin-right: 200px;
+      margin-left: 0px;
+  }
+  
+  form
+  {
+      height: 96px;
+  }
+  
+  input[type="text"]
+  {
+      width: 100%;
+      height: 96px;
+      font-size: 60px;
+      line-height: 1;
+  }
+  
+  input[type="text"]::placeholder
+  {
+      color: #000000;
+  }
+  
+  #s-cover
+  {
+      width: 1px;
+      padding-left: 35px;
+  }
+  
+  button
+  {
+      position: relative;
+      display: block;
+      width: 84px;
+      height: 96px;
+      cursor: pointer;
+  }
+  
+  #s-circle
+  {
+      position: relative;
+      top: -8px;
+      left: 0;
+      width: 43px;
+      height: 43px;
+      margin-top: 0;
+      border-width: 15px;
+      border: 15px solid #FFFFFF;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: 0.5s ease all;
+  }
+  
+  button span
+  {
+      position: absolute;
+      top: 68px;
+      left: 43px;
+      display: block;
+      width: 45px;
+      height: 15px;
+      background-color: transparent;
+      border-radius: 10px;
+      transform: rotateZ(52deg);
+      transition: 0.5s ease all;
+  }
+  
+  button span:before, button span:after
+  {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 45px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 10px;
+      transform: rotateZ(0);
+      transition: 0.5s ease all;
+  }
+  
+  #s-cover:hover #s-circle
+  {
+      top: -1px;
+      width: 67px;
+      height: 15px;
+      border-width: 0;
+      background-color: #fff;
+      border-radius: 20px;
+  }
+  
+  #s-cover:hover span
+  {
+      top: 50%;
+      left: 56px;
+      width: 25px;
+      margin-top: -9px;
+      transform: rotateZ(0);
+  }
+  
+  #s-cover:hover button span:before
+  {
+      bottom: 11px;
+      transform: rotateZ(52deg);
+  }
+  
+  #s-cover:hover button span:after
+  {
+      bottom: -11px;
+      transform: rotateZ(-52deg);
+  }
+  #s-cover:hover button span:before, #s-cover:hover button span:after
+  {
+      right: -6px;
+      width: 40px;
+      background-color: #000000;
+  }
+  
+  #ytd-url {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 10px 14px;
+    margin: 20px;
+    color: #000000;
+    font-family:Serif;
+    font-size: 8px;
+    text-decoration: none;
+    background-color: #ff7575;
+    border-radius: 2px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 1);
+    z-index: 125;
+  }
+  h1 {
+      text-align:center;
+  }
+  p {
+      text-align:center;
+  }
+  
+  /* IMAGE CAROUSEL
+     REFERENCE: https://stackoverflow.com/questions/46249541/change-arrow-colors-in-bootstraps-carousel
+     Things changed - colour of arrow, pictures used, positioning on screen ,height and width
+
+  */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: red;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid red;
+    background-image: none;
+  }
+  
+  .carousel-control-next-icon:after
+  {
+    content: '>';
+    font-size: 55px;
+    color: green;
+  }
+  
+  .carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 55px;
+    color: green;
+  }
+
+  .col-centered{
+    float: none;
+    margin: 0 auto;
+}

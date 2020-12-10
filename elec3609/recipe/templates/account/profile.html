@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/profile.css' %}">
+{% endblock %}
+{% block page_content %}
+<div class="wrapper">
+    <div class="container rounded bg mt-5 mb-5" id="form-container">
+        {% if user.is_authenticated %}
+
+        <form id="deleteProfile" method="POST" action="{% url 'deleteProfile' username=user.username %}">
+            {% csrf_token %}
+            <input id="deleteProfile" type="submit" value="Delete Profile" />
+        </form>
+        <form action="." method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-4 border-right">
+                    {% if user.profile.picture %}
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5 profile-column">
+                        <img id="profile-pic" class=" img-fluid mt-5" src="{{ user.profile.picture.url }}"
+                            style="z-index: 999;">
+                        <div class="middle" style="display: none;">
+                            <div class="text">Click to Change!</div>
+                        </div>
+                        <p id="upload-message" style="display: none;">Uploaded!</p>
+                    </div>
+                    {% else %}
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5 profile-column">
+                        <img id="profile-pic" class=" img-fluid mt-5"
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
+                            style="z-index: 999;">
+                        <div class="middle" style="display: none;">
+                            <div class="text">Click to Change!</div>
+                        </div>
+                        <p id="upload-message" style="display: none;">Uploaded!</p>
+                    </div>
+                    {% endif %}
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                        <input type="file" name="picture" accept="image/*" id="id_picture" style="display: none; ">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="p-5 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right"></h4>
+                            <button id="editProfile" type="button">Edit Profile</button>
+
+                        </div>
+                        <div id="showing" class="row mt-3">
+                            <div class=col-md-6>
+                                <p><strong style="font-size: 20px;">First Name:</strong>
+                                    {{ profile_form.firstname.value|default_if_none:"" }}</p>
+                            </div>
+                            <div class=col-md-6>
+                                <p><strong style="font-size: 20px;">Last Name:</strong>
+                                    {{ profile_form.lastname.value|default_if_none:"" }}</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><strong style="font-size: 20px;">Username:</strong> {{user.username}}</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><strong style="font-size: 20px;">Email:</strong> {{user.email}}</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><strong style="font-size: 20px;">Date of
+                                        Birth:</strong>{{ profile_form.dob.value|default_if_none:"" }}</p>
+                            </div>
+                            <div class=col-md-6>
+                                <p><strong style="font-size: 20px;">Biography:</strong>
+                                    {{ profile_form.bio.value|default_if_none:"" }}</p>
+                            </div>
+                        </div>
+                        <div id="editing" class="row mt-3" style="display: none;">
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p><strong style="font-size: 20px;">First Name:</strong> {{profile_form.firstname}}
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong style="font-size: 20px;">Last Name:</strong>: {{profile_form.lastname}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <p><strong style="font-size: 20px;">Username:</strong> {{user.username}}</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <p><strong style="font-size: 20px;">Email:</strong> {{user.email}}</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <p><strong style="font-size: 20px;">Date of Birth:</strong>{{profile_form.dob}}</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <p><strong style="font-size: 20px;">Briography:</strong> {{profile_form.bio}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex" style="justify-content: center;">
+                {% csrf_token %}
+                <div style="display: flex; justify-content: center;">
+                    <p class="mt-5 text-center" id="saveChangeP"><input id="saveProfile"
+                            class="btn btn-primary profile-button" type="submit" value="Save changes"
+                            style="display: none;"></p>
+                </div>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+{% endblock %}
+{% block head_javascript %}
+<script src="{% static '/js/profile.js' %}"></script>
+{% endblock %}

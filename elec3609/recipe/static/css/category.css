@@ -1,0 +1,99 @@
+/* Global */
+ 
+
+img { max-width:100%; }
+
+a {
+    -webkit-transition: all 150ms ease;
+	-moz-transition: all 150ms ease;
+	-ms-transition: all 150ms ease;
+	-o-transition: all 150ms ease;
+	transition: all 150ms ease; 
+	}
+    
+a:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE7 */
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+body{
+    background: url("/static/assets/7b7b175bb399d5364e4feb95599d2e2f.jpg"); /* added image background */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 24px;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  p{
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+.thumbnails li> .fff .caption { 
+    background:#fff !important; 
+    padding:10px
+}
+
+/* Page Header */
+    
+.page-header h3 {
+    line-height: 0.88rem;
+    color: #000;
+}
+
+.col-sm-3 { 
+    margin-bottom: 0px;
+}
+
+
+/* Thumbnail Box */
+.caption h4 {
+    color: #444;
+}
+
+.caption p {  
+    color: #999;
+}
+
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-inner {
+    width: 85%; /* changing size of carousel */
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.carousel-indicators li {
+   bottom: -50px; /* changing position of carousel page indicators */
+}
+
+/* the category option 'card' - changed the padding sizes */
+.fff {
+    padding: 2.5%;
+    margin: 2.5%;
+    border: 1px solid rgba(245, 246, 247, 0.966);
+    border-radius: 0!important;
+    transition: box-shadow 0.5s;
+    background-color: white;
+    opacity: 0.9;
+}
+
+
+
